@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The stream test.</title>
+  <meta name="description" content="Testing a streaming site.">
+  <meta name="author" content="jr">
+</head>
+<body>
+  <!-- Upload form. Note enctype attribute! -->
+  <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <p>{{ form.non_field_errors }}</p>
+      <p>{{ form.torrent.label_tag }} {{ form.torrent.help_text }}</p>
+      <p>
+          {{ form.torrent.errors }}
+          {{ form.torrent }}
+      </p>
+      <p><input type="submit" value="Upload" /></p>
+  </form>
+</body>
+</html>
