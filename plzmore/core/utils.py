@@ -20,6 +20,7 @@ def write_uploaded_file(f, plzid, extension=None):
     with open(final_path, 'wb+') as destination:
         for chunk in f.chunks():
             destination.write(chunk)
+    return final_path
 
 
 def download_torrent(plzid):
@@ -28,6 +29,7 @@ def download_torrent(plzid):
         plzid,
         '.torrent'
     ])
+
     os.system('bash ~/transmission/scripts/download_torrent.sh {}'.format(
         torrent_path
     ))

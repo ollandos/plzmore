@@ -1,3 +1,0 @@
-Mkv to Mp4 and encode sound to aac
-
-ffmpeg -i input.mkv -c:v copy -c:a libfaac output.mp4

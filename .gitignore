@@ -1,4 +1,15 @@
 ## Ignore logfiles
 *.log
+
 ## Ignore .pyc files
 *.pyc
+
+## Ignore __pycache__ folders
+__pycache__/
+
+## Transmission data
+*/blocklists
+*/Resume
+*/Torrents
+*/dht.dat
+*/stats.json

@@ -2,4 +2,4 @@
 --foreground \
 --log-info \
 --logfile ~/small-site/plzmore/transmission/transmission-daemon.log \
---config-dir ~/small-site/transmission/
+--config-dir ~/small-site/plzmore/transmission/

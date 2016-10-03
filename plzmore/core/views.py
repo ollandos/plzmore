@@ -4,6 +4,7 @@ from django.http import HttpResponse
 
 # Imaginary function to handle an uploaded file.
 from plzmore.core.forms import fileforms
+from plzmore.core.services import torrents
 from plzmore.core import utils
 
 
@@ -20,10 +21,12 @@ class UploadTorrentView(views.View):
     def post(self, request, *args, **kwargs):
         form = fileforms.UploadTorrentForm(request.POST, request.FILES)
         if form.is_valid():
-            utils.write_uploaded_file(
+            location = utils.write_uploaded_file(
                 request.FILES['torrent'],
                 utils.get_random_plzid(),
                 extension='.torrent')
+            ts = torrents.TorrentService()
+            ts.download_torrent(location)
             return HttpResponse()
         else:
             return self.get()
