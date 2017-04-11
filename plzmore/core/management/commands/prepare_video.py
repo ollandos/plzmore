@@ -1,5 +1,4 @@
 import os
-import glob
 
 from django.conf import settings
 from django.core.management import BaseCommand
